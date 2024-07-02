@@ -1,8 +1,5 @@
 .childeWrap {
   display: flex;
   flex-direction: column;
-  gap: 30;
-}
-.childeWrap:not(:last-child) {
-  margin-bottom: 30px;
+  gap: 40px;
 }

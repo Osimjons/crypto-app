@@ -2,7 +2,7 @@ import { Layout, Typography } from 'antd';
 import { useCrypto } from '../../Hooks/useCrypto';
 import { AssetsTable } from '../AssetsTable';
 import { PortfolioChart } from '../PortfolioChart';
-// import style from '../layout/Appcontent.module.css';
+
 import style from './AppContent.module.css';
 const contentStyle = {
   textAlign: 'center',

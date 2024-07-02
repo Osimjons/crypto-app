@@ -1,0 +1,8 @@
+.layout {
+  padding: 1rem;
+  width: 25%;
+}
+
+.card:not(:last-child) {
+  margin-bottom: 25px;
+}

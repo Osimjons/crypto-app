@@ -10,9 +10,9 @@ export const AppSider = () => {
   const { assets } = useContext(CryptoContext);
   const [windowWidth] = useWindowWidth();
 
-  const siderWidth = windowWidth < 900 ? '70%' : '25%';
+  const siderWidth = windowWidth < 980 ? '70%' : '30%';
   const siderStyle =
-    windowWidth < 900
+    windowWidth < 980
       ? { padding: '1rem', alignSelf: 'center' }
       : { padding: '1rem' };
 

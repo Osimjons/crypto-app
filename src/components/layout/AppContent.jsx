@@ -34,7 +34,7 @@ export const AppContent = () => {
         $
       </Typography.Title>
       <div className={style.childeWrap}>
-        {windowWidth < 900 && <AppSider />}
+        {windowWidth < 980 && <AppSider />}
         <PortfolioChart />
         <AssetsTable />
       </div>

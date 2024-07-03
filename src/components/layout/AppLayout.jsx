@@ -17,7 +17,7 @@ export const AppLayout = () => {
     <Layout>
       <AppHeader />
       <Layout>
-        {windowWidth > 900 && <AppSider />}
+        {windowWidth > 980 && <AppSider />}
         <AppContent />
       </Layout>
     </Layout>

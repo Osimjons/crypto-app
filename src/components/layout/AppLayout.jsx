@@ -4,9 +4,12 @@ import { AppSider } from './AppSider';
 import { AppContent } from './AppContent';
 import { useContext } from 'react';
 import { CryptoContext } from '../../context/CoinContext';
+import { useWindowWidth } from '../../Hooks/useWindowWidth';
 
 export const AppLayout = () => {
   const { loading } = useContext(CryptoContext);
+  const [windowWidth] = useWindowWidth();
+
   if (loading) {
     return <Spin fullscreen />;
   }
@@ -14,7 +17,7 @@ export const AppLayout = () => {
     <Layout>
       <AppHeader />
       <Layout>
-        <AppSider />
+        {windowWidth > 900 && <AppSider />}
         <AppContent />
       </Layout>
     </Layout>

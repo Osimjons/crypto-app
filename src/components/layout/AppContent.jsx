@@ -4,6 +4,8 @@ import { AssetsTable } from '../AssetsTable';
 import { PortfolioChart } from '../PortfolioChart';
 
 import style from './AppContent.module.css';
+import { AppSider } from './AppSider';
+import { useWindowWidth } from '../../Hooks/useWindowWidth';
 const contentStyle = {
   textAlign: 'center',
   minHeight: 'calc(100vh - 65px)',
@@ -15,6 +17,7 @@ const contentStyle = {
 
 export const AppContent = () => {
   const { assets, crypto } = useCrypto();
+  const [windowWidth] = useWindowWidth();
 
   const cryptoPriceMap = crypto.reduce((acc, c) => {
     acc[c.id] = c.price;
@@ -31,6 +34,7 @@ export const AppContent = () => {
         $
       </Typography.Title>
       <div className={style.childeWrap}>
+        {windowWidth < 900 && <AppSider />}
         <PortfolioChart />
         <AssetsTable />
       </div>

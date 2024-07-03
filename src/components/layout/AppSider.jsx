@@ -4,12 +4,20 @@ import style from './AppSider.module.css';
 import { useContext } from 'react';
 import { capitalaze } from '../../helpers/Capitalaze';
 import { CryptoContext } from '../../context/CoinContext';
+import { useWindowWidth } from '../../Hooks/useWindowWidth';
 
 export const AppSider = () => {
   const { assets } = useContext(CryptoContext);
+  const [windowWidth] = useWindowWidth();
+
+  const siderWidth = windowWidth < 900 ? '70%' : '25%';
+  const siderStyle =
+    windowWidth < 900
+      ? { padding: '1rem', alignSelf: 'center' }
+      : { padding: '1rem' };
 
   return (
-    <Layout.Sider width="25%" style={{ padding: '1rem' }}>
+    <Layout.Sider width={siderWidth} style={siderStyle}>
       {assets.map((asset) => (
         <Card key={asset.id} className={style.card}>
           <Statistic
@@ -34,7 +42,6 @@ export const AppSider = () => {
                 flag: true,
                 icon: asset.icon,
               },
-              // { title: 'Difference', value: asset.growPercent },
             ]}
             renderItem={(item) => (
               <List.Item>
